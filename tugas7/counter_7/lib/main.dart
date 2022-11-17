@@ -2,11 +2,11 @@ import 'package:counter_7/drawer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp(title: '',));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key, required String title});
+  const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -16,14 +16,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Program Counter'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
 
   final String title;
 
@@ -45,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
- void _decrementCounter() {
+  void _decrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -71,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       // ignore: prefer_const_literals_to_create_immutables
-      drawer: AppDrawer(myBudgetList: [],),
+      drawer: AppDrawer(),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.

@@ -5,16 +5,16 @@ import 'package:counter_7/form.dart';
 import 'package:counter_7/main.dart';
 
 class AppDrawer extends StatefulWidget {
-  late List<Budget> myBudgetList;
-  AppDrawer({super.key, required this.myBudgetList});
+  var theBudget;
+  AppDrawer({super.key, this.theBudget});
 
   @override
   State<AppDrawer> createState() => _AppDrawerState();
 }
 
-class _AppDrawerState extends State<AppDrawer>{
+class _AppDrawerState extends State<AppDrawer> {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Drawer(
       child: Column(
         children: [
@@ -25,7 +25,10 @@ class _AppDrawerState extends State<AppDrawer>{
               // Route menu ke halaman utama
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const MyHomePage(title: "Program Counter",)),
+                MaterialPageRoute(
+                    builder: (context) => const MyHomePage(
+                          title: "Program Counter",
+                        )),
               );
             },
           ),
@@ -35,17 +38,20 @@ class _AppDrawerState extends State<AppDrawer>{
               // Route menu ke halaman form
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const BudgetForm(title: "Form Budget",)),
+                MaterialPageRoute(builder: (context) => const BudgetForm()),
               );
             },
           ),
-           ListTile(
+          ListTile(
             title: const Text('Data Budget'),
             onTap: () {
               // Route menu ke halaman form
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => BudgetList( myBudgetList: widget.myBudgetList,)),
+                MaterialPageRoute(
+                    builder: (context) => BudgetList(
+                          myBudgetList: widget.theBudget,
+                        )),
               );
             },
           ),
