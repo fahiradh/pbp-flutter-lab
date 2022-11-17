@@ -1,5 +1,6 @@
-### Fahira Adindiah (2106751575)
+#### Fahira Adindiah (2106751575)
 
+### :bulb: Tugas 7 :bulb:
 ## Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.
 Stateless widget adalah widget yang statenya tidak bisa diubah ketika sudah dibuat. Dengan kata lain, widget bersifat statis dan seluruh konfigurasi di dalamnya telah diinisiasi sejak awal. Sementara itu, Stateful widget adalah widget yang statenya bisa diubah ketika widget sudah dibuat. Stateful widget bersifat dinamus dan bisa diatur kapanpun dibutuhkan berdasarkan user actions atau ketika ada perubahan data. 
 
@@ -22,3 +23,23 @@ Const dapat digunakan untuk deklarasi variabel immutable yang nilainya bersifat 
 2. Mengedit main.dart</br>
 Pada file main.dart, saya membuat method _decrementCounter() untuk mengatur nilai `_counter` setelah widget - diklik. Isi dari method itu adalah `setState()` dan decrement `_counter`. Kemudian, saya menambahkan widget GANJIL dan GENAP sesuai permintaan soal. Agar widget - hanya muncul ketika nilai `_counter` > 0, maka saya menggunakan conditionals `if (_counter > 0)` untuk widget -.</br>
 3. Melakukan `git add counter_7`, `git commit -m "tugas 7"`, dan `git push -u origin main`.
+
+### :bulb: Tugas 8 :bulb:
+## Jelaskan perbedaan `Navigator.push` dan `Navigator.pushReplacement`.
+`Navugator.push` akan menambahakn satu halaman ke top of stack Navigator, sedangkan `Navigator.pushReplacement` menggantikan halaman saat ini ke halaman baru dan user tidak bisa kembali ke halaman sebelumnya.
+
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+* Form: widget untuk membuat form
+* ListTile: widget berbentuk list
+* Container: widget untuk menampung widget-widget lain
+* Drawer: widget untuk membuat drawe 
+* Column: widget untuk menampung widget-widget lain secara vertikal
+
+## Sebutkan jenis-jenis event yang ada pada Flutter (contoh: onPressed)
+onPressed, onTap, onChanged, onSaved
+
+## Jelaskan bagaimana cara kerja `Navigator` dalam "mengganti" halaman dari aplikasi Flutter.
+Navigator yang berbentuk stack akan menampilkan halaman pada top of stack-nya dengan push/pushReplacement. Selanjutnya, halaman yang ditampilkan akan berubah ke halaman baru. Setelah halaman dibuka, maka halaman akan di-pop dan top of stack menjadi halaman di bawah halaman yang ditampilkan saat ini.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+Pertama, saya membuat drawer untuk ketiga aplikasi, yaitu counter_7, tambah budget, dan data budget. Selanjutnya, membuat model budget (budget.dart) dan satu per satu mulai membuat halaman untuk menampilkan tambah budget dan data budget.
