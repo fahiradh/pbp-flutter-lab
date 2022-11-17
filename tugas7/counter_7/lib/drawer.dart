@@ -25,7 +25,7 @@ class _AppDrawerState extends State<AppDrawer>{
               // Route menu ke halaman utama
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const MyHomePage(title: "Program COunter",)),
+                MaterialPageRoute(builder: (context) => const MyHomePage(title: "Program Counter",)),
               );
             },
           ),
