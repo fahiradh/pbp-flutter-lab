@@ -1,4 +1,4 @@
-import 'package:counter_7/drawer.dart';
+import 'package:counter_7/page/drawer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       // ignore: prefer_const_literals_to_create_immutables
-      drawer: AppDrawer(),
+      drawer: MyDrawer(),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.

@@ -1,6 +1,6 @@
 class Budget {
   String judul;
-  int nominal;
+  String nominal;
   String jenis;
   String date;
 
