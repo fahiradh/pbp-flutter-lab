@@ -43,3 +43,22 @@ Navigator yang berbentuk stack akan menampilkan halaman pada top of stack-nya de
 
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 Pertama, saya membuat drawer untuk ketiga aplikasi, yaitu counter_7, tambah budget, dan data budget. Selanjutnya, membuat model budget (budget.dart) dan satu per satu mulai membuat halaman untuk menampilkan tambah budget dan data budget.
+
+### :bulb: Tugas 9 :bulb:
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Pengambilan data JSON tanpa membuat model bisa dilakukan. Hal ini karena JSON dalam bahasa Dart ekuivalen dengan Map, yaitu terdiri dari key dan value. Akan tetapi, pengambilan data JSON tanpa model akan memungkinkan terjadinya kesalahan dalam pengambilan data melalui http request.
+
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+Widget yang saya gunakan untuk menyelesaikan tugas 9 kurang lebih sama seperti widget yang saya gunakan untuk menyelesaikan tugas 7 & 8. Namun, ada beberapa widget baru yang saya gunakan khusus untuk tugas 9.
+* FutureBuilder: widget untuk membuat widget berdasarkan pada snapshot terakhir yang berkaitan dengan Future
+* ListView: widget berbentuk list
+* SizedBox: widget untuk menampilkan box dengan ukuran tertentu
+* BoxShadow: widget untuk memberi kesan shadow pada box
+
+## Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+Pertama, function http request dengan method GET akan mengambil data secara asynchronous. Setelah data diambil, akan dilakukan parsing pada function dengan `jsonDecode()`. Tujuan parsing adalah untuk mengubah response dari type Strinf menjadi JSON. Data JSON yang telah dimiliki akan dikonversi sesuai model object-nya. Hasil konservi akan ditampilkan menjadi sebuah object dengan widget `FutureBuilder`.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+Saya banyak mengikuti langkah-langkah pada tutorial 8 kemarin. Pertama, saya menambahkan dependency http ke proyek. Saya membuat 2 folder bar yaitu modal dan page. Semua file selain `main.dart` saya pindahkan ke dalam folder page. Selanjutnya, saya mengonversi JSON dari `https://katalog-barang.herokuapp.com/mywatchlist/json` ke bahasa dart dengan bantuan website eksternal. Sebelumnya, saya telah membuat file baru di dalam folder modal bernama `mywatchlist.dart`. Hasil konversi menjadi bahasa dart saya copy-paste ke file `mywatchlist.dart`.
+
+Saya membuat file baru di dalam folder page `my_watchlist_page.dart` dan `detail.dart`. FIle pertama digunakan untuk menambilkan watchlist dalam bentuk list, file kedua untuk memampilkan detail dari film dalam watchlist. Kemudian, saya membuat folder baru queries dan membuat file `fetch_data.dart` untuk mengambil data-data dari JSON pada `https://katalog-barang.herokuapp.com/mywatchlist/json`. Setelah semua selesai, saya menambahkan `ListTile` watchlist pada `drawer.dart`. Pengerjaan tugas 9 saya akhiri dengan `git add`, `git commit`, dan `git push` ke repositori.
